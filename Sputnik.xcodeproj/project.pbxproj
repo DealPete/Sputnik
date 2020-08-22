@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A229B9424D63949003CAB7B /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A229B9324D63949003CAB7B /* Line.swift */; };
+		1A37100D24B7D1D200E46EAF /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A37100C24B7D1D100E46EAF /* NetworkCall.swift */; };
 		1A8F236024B68586001F4403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F235F24B68586001F4403 /* AppDelegate.swift */; };
 		1A8F236224B68586001F4403 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F236124B68586001F4403 /* ContentView.swift */; };
 		1A8F236424B68588001F4403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A8F236324B68588001F4403 /* Assets.xcassets */; };
 		1A8F236724B68588001F4403 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A8F236624B68588001F4403 /* Preview Assets.xcassets */; };
 		1A8F236A24B68588001F4403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8F236824B68588001F4403 /* Main.storyboard */; };
+		1AAD3E6B24E9A29000929E26 /* SourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD3E6A24E9A29000929E26 /* SourceView.swift */; };
+		1AC8DD6224BA1B6C005F1206 /* GeminiDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8DD6124BA1B6C005F1206 /* GeminiDocument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A229B9324D63949003CAB7B /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		1A37100C24B7D1D100E46EAF /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		1A8F235C24B68586001F4403 /* Sputnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sputnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8F235F24B68586001F4403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A8F236124B68586001F4403 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +29,8 @@
 		1A8F236924B68588001F4403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A8F236B24B68588001F4403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A8F236C24B68588001F4403 /* Sputnik.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sputnik.entitlements; sourceTree = "<group>"; };
+		1AAD3E6A24E9A29000929E26 /* SourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceView.swift; sourceTree = "<group>"; };
+		1AC8DD6124BA1B6C005F1206 /* GeminiDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiDocument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +64,11 @@
 			isa = PBXGroup;
 			children = (
 				1A8F235F24B68586001F4403 /* AppDelegate.swift */,
+				1AAD3E6A24E9A29000929E26 /* SourceView.swift */,
 				1A8F236124B68586001F4403 /* ContentView.swift */,
+				1AC8DD6124BA1B6C005F1206 /* GeminiDocument.swift */,
+				1A229B9324D63949003CAB7B /* Line.swift */,
+				1A37100C24B7D1D100E46EAF /* NetworkCall.swift */,
 				1A8F236324B68588001F4403 /* Assets.xcassets */,
 				1A8F236824B68588001F4403 /* Main.storyboard */,
 				1A8F236B24B68588001F4403 /* Info.plist */,
@@ -90,6 +102,8 @@
 			dependencies = (
 			);
 			name = Sputnik;
+			packageProductDependencies = (
+			);
 			productName = Sputnik;
 			productReference = 1A8F235C24B68586001F4403 /* Sputnik.app */;
 			productType = "com.apple.product-type.application";
@@ -101,7 +115,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Peter Deal";
 				TargetAttributes = {
 					1A8F235B24B68586001F4403 = {
@@ -118,6 +132,8 @@
 				Base,
 			);
 			mainGroup = 1A8F235324B68586001F4403;
+			packageReferences = (
+			);
 			productRefGroup = 1A8F235D24B68586001F4403 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -147,6 +163,10 @@
 			files = (
 				1A8F236224B68586001F4403 /* ContentView.swift in Sources */,
 				1A8F236024B68586001F4403 /* AppDelegate.swift in Sources */,
+				1A37100D24B7D1D200E46EAF /* NetworkCall.swift in Sources */,
+				1AAD3E6B24E9A29000929E26 /* SourceView.swift in Sources */,
+				1AC8DD6224BA1B6C005F1206 /* GeminiDocument.swift in Sources */,
+				1A229B9424D63949003CAB7B /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +302,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sputnik/Sputnik.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Sputnik/Preview Content\"";
@@ -305,6 +326,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sputnik/Sputnik.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Sputnik/Preview Content\"";
