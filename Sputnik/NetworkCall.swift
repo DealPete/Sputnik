@@ -139,25 +139,54 @@ class NetworkCall: ObservableObject {
             return
         }
         
-        var mimeType: MimeType
+        var mimeType: MimeType = .textGemini
+        var charset: String.Encoding = .utf8
         
-        if meta.hasPrefix("text/plain") {
-            mimeType = .textPlain
-        } else if meta.hasPrefix("text/gemini") {
-            mimeType = .textGemini
-        } else {
-            error("Unknown MIME type \(meta)")
-            return
+        let metaComponents = meta.components(separatedBy: ";").map({ $0.trimmingCharacters(in: .whitespaces).lowercased() })
+        
+        for component in metaComponents {
+            if component.isEmpty {
+                continue
+            }
+
+            if component.hasPrefix("charset=") {
+                let charsetText = component.dropFirst(8)
+
+                switch charsetText {
+                case "utf-8":
+                    charset = .utf8
+                case "iso-8859-1":
+                    charset = .isoLatin1
+                case "us-ascii":
+                    charset = .ascii
+                default:
+                    error("Unknown charset \(charsetText)")
+                    return
+                }
+            } else if component.contains("=") {
+                // Ignore unknown parameter
+                ()
+            } else {
+                switch component {
+                case "text/plain":
+                    mimeType = .textPlain
+                case "text/gemini":
+                    mimeType = .textGemini
+                default:
+                    error("Unknown MIME type \(component)")
+                    return
+                }
+            }
         }
-        
+
         guard let firstIndex = buffer.firstIndex(of: 0x0a) else {
             error("Header not concluded with line feed")
             return
         }
         
         let documentBytes = buffer.suffix(from: firstIndex + 1)
-        guard let string = String(data: documentBytes, encoding: .utf8) else {
-            error("Document is not valid UTF-8.")
+        guard let string = String(data: documentBytes, encoding: charset) else {
+            error("Document is not valid \(charset).")
             return
         }
         
@@ -239,7 +268,7 @@ struct GeminiURL {
         } else if url.absoluteString.last == "/" {
             path += "/"
         }
-        
+
         if path.first != "/" {
             path = "/" + path
         }
