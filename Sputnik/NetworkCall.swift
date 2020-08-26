@@ -102,14 +102,14 @@ class NetworkCall: ObservableObject {
         
         case "30":
             if let url = URL(string: meta) {
-                complete(.redirect(url: GeminiURL(url: url)))
+                complete(.redirect(url: GeminiURL(url: url.standardized)))
             } else {
                 error("Redirected to mangled URL")
             }
 
         case "31":
             if let url = URL(string: meta) {
-                complete(.redirect(url: GeminiURL(url: url)))
+                complete(.redirect(url: GeminiURL(url: url.standardized)))
             } else {
                 error("Redirected to mangled URL")
             }

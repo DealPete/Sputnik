@@ -66,9 +66,9 @@ struct Line {
             }
             
             if text == "" {
-                return Line(text: url, type: .link(target: URL), id: id)
+                return Line(text: url, type: .link(target: URL.standardized), id: id)
             } else {
-                return Line(text: text, type: .link(target: URL), id: id)
+                return Line(text: text, type: .link(target: URL.standardized), id: id)
             }
         }
         

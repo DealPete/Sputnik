@@ -34,7 +34,7 @@ struct ContentView: View {
     
     func browse() {
         if let url = URL(string: document.navBarUrl) {
-            document.navigate(url, nil)
+            document.navigate(url.standardized, nil)
         }
     }
 }
