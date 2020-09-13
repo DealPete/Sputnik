@@ -340,7 +340,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
                                     <items>
-                                        <menuItem title="Item" keyEquivalent="u" id="3hu-F0-MII" userLabel="View Source">
+                                        <menuItem title="View Source" keyEquivalent="u" id="3hu-F0-MII" userLabel="View Source">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="viewSource:" target="Voe-Tx-rLC" id="YoJ-8S-LYP"/>

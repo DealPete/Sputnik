@@ -67,7 +67,7 @@ class NetworkCall: ObservableObject {
             }
             
             if isComplete {
-                self.parseDocument()
+                self.parseHeader()
                 return
             }
             
@@ -80,7 +80,7 @@ class NetworkCall: ObservableObject {
         }
     }
 
-    private func parseDocument() {
+    private func parseHeader() {
         guard let statusCode = String(data: buffer.prefix(2), encoding: .ascii) else {
             error("Couldn't read status code")
             return
@@ -117,6 +117,15 @@ class NetworkCall: ObservableObject {
             
         case "40":
             self.error("40 TEMPORARY FAILURE\n\(meta)")
+            return
+        
+        case "41":
+            self.error("\(meta) (41 SERVER UNAVAILABLE)")
+            return
+            
+        case "42":
+            self.error("\(meta) (42 CGI ERROR)")
+            return
         
         case "50":
             error("\(meta) (50 PERMANENT FAILURE)")
@@ -138,9 +147,9 @@ class NetworkCall: ObservableObject {
             self.error("Invalid status code \(statusCode)")
             return
         }
-        
-        var mimeType: MimeType = .textGemini
+
         var charset: String.Encoding = .utf8
+        var mimeTypeString: String = "text/gemini"
         
         let metaComponents = meta.components(separatedBy: ";").map({ $0.trimmingCharacters(in: .whitespaces).lowercased() })
         
@@ -167,16 +176,22 @@ class NetworkCall: ObservableObject {
                 // Ignore unknown parameter
                 ()
             } else {
-                switch component {
-                case "text/plain":
-                    mimeType = .textPlain
-                case "text/gemini":
-                    mimeType = .textGemini
-                default:
-                    error("Unknown MIME type \(component)")
-                    return
-                }
+                mimeTypeString = component
             }
+        }
+        
+        let mimeType: MimeType
+        
+        switch mimeTypeString {
+        case "text/plain":
+            mimeType = .text(charset: charset, format: .plain)
+        case "text/gemini":
+            mimeType = .text(charset: charset, format: .gemini)
+        case "image/png", "image/jpeg":
+            mimeType = .image
+        default:
+            error("Unknown MIME type \(mimeTypeString)")
+            return
         }
 
         guard let firstIndex = buffer.firstIndex(of: 0x0a) else {
@@ -185,12 +200,8 @@ class NetworkCall: ObservableObject {
         }
         
         let documentBytes = buffer.suffix(from: firstIndex + 1)
-        guard let string = String(data: documentBytes, encoding: charset) else {
-            error("Document is not valid \(charset).")
-            return
-        }
         
-        complete(.success(text: string, mimeType: mimeType))
+        complete(.success(documentBytes: documentBytes, mimeType: mimeType))
     }
 
     private func complete(_ result: ConnectionResult) {
@@ -208,14 +219,19 @@ class NetworkCall: ObservableObject {
 
 enum ConnectionResult {
     case input(String)
-    case success(text: String, mimeType: MimeType)
+    case success(documentBytes: Data, mimeType: MimeType)
     case redirect(url: GeminiURL)
     case error(String)
 }
 
 enum MimeType {
-    case textGemini
-    case textPlain
+    case text(charset: String.Encoding, format: TextFormat)
+    case image
+}
+
+enum TextFormat {
+    case plain
+    case gemini
 }
 
 struct GeminiURL {
