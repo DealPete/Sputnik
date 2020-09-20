@@ -20,16 +20,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openNewWindow()
     }
     
+    @IBAction func back(_ sender: Any) {
+        if let document = getCurrentDocument() {
+            document.back()
+        }
+    }
+
+    @IBAction func forward(_ sender: Any) {
+        if let document = getCurrentDocument() {
+            document.forward()
+        }
+    }
+
     @IBAction func viewSource(_ sender: Any) {
+        if let document = getCurrentDocument() {
+            let lines = document.rawText
+            let contentView = SourceView(content: lines)
+            sourceWindows.append(createWindow(view: AnyView(contentView)))
+        }
+    }
+
+    func getCurrentDocument() -> GeminiDocument? {
         if let window = NSApp.mainWindow {
             if let geminiWindow = windows.first(where: {
                 $0.window == window
             }) {
-                let lines = geminiWindow.document.rawText
-                let contentView = SourceView(content: lines)
-                sourceWindows.append(createWindow(view: AnyView(contentView)))
+                return geminiWindow.document
             }
         }
+
+        return nil
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
