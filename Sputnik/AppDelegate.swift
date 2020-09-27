@@ -11,9 +11,7 @@ import SwiftUI
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var document = GeminiDocument()
-    var windows: [GeminiWindow] = []
-    var sourceWindows: [NSWindow] = []
+    var windows: [NSWindow] = []
     var previousWindowPoint: NSPoint = NSZeroPoint
     
     @IBAction func newWindow(_ sender: Any) {
@@ -36,15 +34,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let document = getCurrentDocument() {
             let lines = document.rawText
             let contentView = SourceView(content: lines)
-            sourceWindows.append(createWindow(view: AnyView(contentView)))
+            let window = NSWindow(
+                contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+                styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+                backing: .buffered, defer: false
+            )
+            window.contentView = NSHostingView(rootView: contentView)
+            setupWindow(window: window)
         }
     }
 
     func getCurrentDocument() -> GeminiDocument? {
         if let window = NSApp.mainWindow {
-            if let geminiWindow = windows.first(where: {
-                $0.window == window
-            }) {
+            if let geminiWindow = window as? GeminiDocumentWindow {
                 return geminiWindow.document
             }
         }
@@ -59,33 +61,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func openNewWindow() {
         let document = GeminiDocument()
         let contentView = ContentView(document: document)
-        let window = createWindow(view: AnyView(contentView))
-        windows.append(GeminiWindow(window: window, document: document))
+        let window = GeminiDocumentWindow(document: document)
+        window.contentView = NSHostingView(rootView: contentView)
+        setupWindow(window: window)
     }
     
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
-    func createWindow(view: AnyView) -> NSWindow {
-        let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        
+    func setupWindow(window: NSWindow) {
         window.makeKeyAndOrderFront(nil)
         window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: view)
 
         window.center()
         previousWindowPoint = window.cascadeTopLeft(from: previousWindowPoint)
-
-        return window
+        self.windows.append(window)
     }
 }
 
-struct GeminiWindow {
-    let window: NSWindow
+class GeminiDocumentWindow : NSWindow {
     let document: GeminiDocument
-}
 
+    init(document: GeminiDocument) {
+        self.document = document
+
+        super.init(
+            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered, defer: false
+        )
+    }
+}
