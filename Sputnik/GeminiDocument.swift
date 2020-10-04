@@ -147,17 +147,15 @@ class GeminiDocument: ObservableObject {
     func back() {
         if navIndex > 0 {
             navIndex -= 1
+            self.connect()
         }
-        
-        self.connect()
     }
     
     func forward() {
         if navIndex < navStack.count - 1 {
             navIndex += 1
+            self.connect()
         }
-        
-        self.connect()
     }
     
     func parse(text: [String]) -> [Node] {

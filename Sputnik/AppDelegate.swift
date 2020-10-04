@@ -88,4 +88,18 @@ class GeminiDocumentWindow : NSWindow {
             backing: .buffered, defer: false
         )
     }
+
+    override func keyDown(with event: NSEvent) {
+        if event.modifierFlags.contains(.command) {
+            if let chars = event.charactersIgnoringModifiers {
+                let scalars = chars.unicodeScalars.map{ $0.value }
+
+                if scalars.contains(63234) {
+                    document.back()
+                } else if scalars.contains(63235) {
+                    document.forward()
+                }
+            }
+        }
+    }
 }
