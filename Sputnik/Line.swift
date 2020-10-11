@@ -103,6 +103,7 @@ struct Line {
 struct LineView: View {
     var line: Line?
     var background: Color = .black
+    let textColor = Color(red: 0.85, green: 0.85, blue: 0.85)
     let textFont = "Palatino"
     let headingFont = "Luminari"
     let linkFont = "Helvetica Neue"
@@ -138,7 +139,7 @@ struct LineView: View {
             view = AnyView(Text(startQuote + line.text + endQuote).font(.custom(quoteFont, size: 18)).foregroundColor(.green))
             
         case .list:
-            view = AnyView(Text("• " + line.text).font(.custom(textFont, size: 16)).lineSpacing(6))
+            view = AnyView(Text("• " + line.text).font(.custom(textFont, size: 16)).foregroundColor(textColor).lineSpacing(6))
             
         case .link(let target):
             view = AnyView(Button(action: {
@@ -158,7 +159,7 @@ struct LineView: View {
             padding = 0
         
         case .text:
-            view = AnyView(text.font(.custom(textFont, size: 16)).lineSpacing(6))
+            view = AnyView(text.font(.custom(textFont, size: 16)).foregroundColor(textColor).lineSpacing(6))
         }
         
         return AnyView(view
