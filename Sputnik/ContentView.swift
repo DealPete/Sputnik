@@ -13,19 +13,28 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             HStack {
                 Button( action: {
                     self.document.back()
-                } ) {
-                    Text("←")
+                } )
+                {if #available(OSX 11.0, *) {
+                    Image(systemName: "arrow.left").imageScale(.small)
+                } else {
+                    Text("←")}
+                
                 }
                 .padding(.leading, 6)
+                
                 Button( action: {
                     self.document.forward()
-                } ) {
+                } ) {if #available(OSX 11.0, *) {
+                    Image(systemName: "arrow.right").imageScale(.small)
+                } else {
                     Text("→")
-                }
+                }}
                 TextField("Gemini Site", text: $document.navBarUrl, onCommit: browse)
+                Spacer()
             }
             
             GeminiDocumentView(document: document)
