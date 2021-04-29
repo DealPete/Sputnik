@@ -14,6 +14,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var windows: [NSWindow] = []
     var previousWindowPoint: NSPoint = NSZeroPoint
     
+    // preferences window
+    @IBAction func prefWindow(_ sender: Any) {
+        let pref = Preferences()
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
+            styleMask: [.titled, .closable, .miniaturizable, .fullSizeContentView],
+            backing: .buffered, defer: false
+        )
+        window.contentView = NSHostingView(rootView: pref)
+        setupWindow(window: window)
+    }
+    
     @IBAction func newWindow(_ sender: Any) {
         openNewWindow()
     }
