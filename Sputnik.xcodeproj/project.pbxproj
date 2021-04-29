@@ -17,6 +17,7 @@
 		1AAD3E6B24E9A29000929E26 /* SourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD3E6A24E9A29000929E26 /* SourceView.swift */; };
 		1AC8DD6224BA1B6C005F1206 /* GeminiDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8DD6124BA1B6C005F1206 /* GeminiDocument.swift */; };
 		1AD2F57724FC43D700A7054D /* SubContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F57624FC43D700A7054D /* SubContent.swift */; };
+		22F08FBD263B11EB00CA0370 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F08FBC263B11EB00CA0370 /* Preferences.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		1AAD3E6A24E9A29000929E26 /* SourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceView.swift; sourceTree = "<group>"; };
 		1AC8DD6124BA1B6C005F1206 /* GeminiDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiDocument.swift; sourceTree = "<group>"; };
 		1AD2F57624FC43D700A7054D /* SubContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContent.swift; sourceTree = "<group>"; };
+		22F08FBC263B11EB00CA0370 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				1A8F236B24B68588001F4403 /* Info.plist */,
 				1A8F236C24B68588001F4403 /* Sputnik.entitlements */,
 				1A8F236524B68588001F4403 /* Preview Content */,
+				22F08FBC263B11EB00CA0370 /* Preferences.swift */,
 			);
 			path = Sputnik;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				1AAD3E6B24E9A29000929E26 /* SourceView.swift in Sources */,
 				1AC8DD6224BA1B6C005F1206 /* GeminiDocument.swift in Sources */,
 				1AD2F57724FC43D700A7054D /* SubContent.swift in Sources */,
+				22F08FBD263B11EB00CA0370 /* Preferences.swift in Sources */,
 				1A229B9424D63949003CAB7B /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
