@@ -24,7 +24,6 @@
 /* Begin PBXFileReference section */
 		1A229B9324D63949003CAB7B /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		1A37100C24B7D1D100E46EAF /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
-		1A8F235C24B68586001F4403 /* Sputnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Sputnik.app; path = "/Users/dietrich/Desktop/dev/Xcode Projects/Sputnik/build/Debug/Sputnik.app"; sourceTree = "<absolute>"; };
 		1A8F235F24B68586001F4403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A8F236124B68586001F4403 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A8F236324B68588001F4403 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		1AAD3E6A24E9A29000929E26 /* SourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceView.swift; sourceTree = "<group>"; };
 		1AC8DD6124BA1B6C005F1206 /* GeminiDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiDocument.swift; sourceTree = "<group>"; };
 		1AD2F57624FC43D700A7054D /* SubContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContent.swift; sourceTree = "<group>"; };
+		2233E50F263BD10500F7AC0B /* Sputnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sputnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2292A4E7263B31E1008820A7 /* PreferencesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTab.swift; sourceTree = "<group>"; };
 		22F08FBC263B11EB00CA0370 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				1A8F235E24B68586001F4403 /* Sputnik */,
+				2233E50F263BD10500F7AC0B /* Sputnik.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,7 +106,7 @@
 			packageProductDependencies = (
 			);
 			productName = Sputnik;
-			productReference = 1A8F235C24B68586001F4403 /* Sputnik.app */;
+			productReference = 2233E50F263BD10500F7AC0B /* Sputnik.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

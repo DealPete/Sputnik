@@ -10,19 +10,19 @@ import SwiftUI
 
 struct Preferences: View {
     @State var page:String = "GeneralView"
-
+    @State var selectedThemeIndex = UserDefaults.standard.integer(forKey: "Theme")
+    
     var body: some View {
         VStack {
-            
             // top menu bar
             ZStack {
                 if #available(macOS 11.0, *) {
-                    Color(NSColor.white).ignoresSafeArea()
+                    Color("white").ignoresSafeArea()
                 } else {
-                    Color(.white)
+                    Color("white")
                     
                 }
-                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 75){
+                HStack(alignment: .center, spacing: 75){
                     PreferencesTab(icon: "gearshape", fallbackIcon: "􀣋", title: "General").onTapGesture {
                         self.page = "GeneralView"}
                    
@@ -38,8 +38,27 @@ struct Preferences: View {
             
             // preferences content
             VStack {
-                if page == "GeneralView" { Text("General") }
-                    if page == "ThemeView" { Text("Theme") }
+                if page == "GeneralView" {
+                        Text("General").font(.headline) }
+                    if page == "ThemeView" {
+                        Text("Theme").font(.headline)
+                        
+                        // theme picker
+                        Picker("Theme:", selection: $selectedThemeIndex, content: {
+                                Text("Classic").tag(0)
+                                Text("Dark").tag(1)
+                                Text("Light").tag(2)
+                                Text("Satellite").tag(3)
+                        }).padding(.horizontal, 30)
+                        
+                        // save theme button
+                        Button(action: {
+                            // OUTPUT_PICKED_NUMBER: print(String(selectedThemeIndex))
+                            UserDefaults.standard.set(self.selectedThemeIndex, forKey: "Theme")
+                        }){
+                            Text("Save")
+                        }
+                    }
                     if page == "AboutView" {
                         Image("Icon-64")
                         Text("Sputnik").font(.headline)
