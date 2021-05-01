@@ -22,6 +22,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             styleMask: [.titled, .closable, .miniaturizable, .fullSizeContentView],
             backing: .buffered, defer: false
         )
+        window.title = "Preferences"
+        window.center()
         window.contentView = NSHostingView(rootView: pref)
         setupWindow(window: window)
     }
