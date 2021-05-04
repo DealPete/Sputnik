@@ -102,8 +102,8 @@ struct Line {
 
 struct LineView: View {
     var line: Line?
-    var background: Color = .black
-    let textColor = Color(red: 0.85, green: 0.85, blue: 0.85)
+    var background: Color = ThemeData().backgroundColor
+    let textColor: Color = ThemeData().textColor
     let textFont = "Palatino"
     let headingFont = "Luminari"
     let linkFont = "Helvetica Neue"
@@ -151,7 +151,7 @@ struct LineView: View {
             }) {
                 text.font(.custom(linkFont, size: 16))
                     .foregroundColor(target.scheme == "http" || target.scheme == "https" ?
-                        Color(red: 0, green: 0, blue: 1) : .blue)
+                                        ThemeData().httpLinkColor : ThemeData().linkColor)
             }.buttonStyle(PlainButtonStyle()))
             
         case .preformat:

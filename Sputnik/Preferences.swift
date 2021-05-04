@@ -58,6 +58,8 @@ struct Preferences: View {
                         }){
                             Text("Save")
                         }
+                        
+                        Text("You may have to reopen the window that the changes take effect").font(.subheadline)
                     }
                     if page == "AboutView" {
                         Image("Icon-64")
