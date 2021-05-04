@@ -19,6 +19,7 @@
 		1AD2F57724FC43D700A7054D /* SubContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD2F57624FC43D700A7054D /* SubContent.swift */; };
 		2292A4E8263B31E1008820A7 /* PreferencesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292A4E7263B31E1008820A7 /* PreferencesTab.swift */; };
 		22F08FBD263B11EB00CA0370 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F08FBC263B11EB00CA0370 /* Preferences.swift */; };
+		22FA31A5263C904500C54EAC /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FA31A4263C904500C54EAC /* ThemeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		2233E50F263BD10500F7AC0B /* Sputnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sputnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2292A4E7263B31E1008820A7 /* PreferencesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTab.swift; sourceTree = "<group>"; };
 		22F08FBC263B11EB00CA0370 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		22FA31A4263C904500C54EAC /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				1AC8DD6124BA1B6C005F1206 /* GeminiDocument.swift */,
 				1AD2F57624FC43D700A7054D /* SubContent.swift */,
 				1A229B9324D63949003CAB7B /* Line.swift */,
+				22FA31A4263C904500C54EAC /* ThemeData.swift */,
 				1A37100C24B7D1D100E46EAF /* NetworkCall.swift */,
 				1A8F236324B68588001F4403 /* Assets.xcassets */,
 				1A8F236824B68588001F4403 /* Main.storyboard */,
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A8F236224B68586001F4403 /* ContentView.swift in Sources */,
+				22FA31A5263C904500C54EAC /* ThemeData.swift in Sources */,
 				1A8F236024B68586001F4403 /* AppDelegate.swift in Sources */,
 				1A37100D24B7D1D200E46EAF /* NetworkCall.swift in Sources */,
 				2292A4E8263B31E1008820A7 /* PreferencesTab.swift in Sources */,
