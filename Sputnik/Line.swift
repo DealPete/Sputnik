@@ -104,11 +104,11 @@ struct LineView: View {
     var line: Line?
     var background: Color = ThemeData().backgroundColor
     let textColor: Color = ThemeData().textColor
-    let textFont = "Palatino"
-    let headingFont = "Luminari"
-    let linkFont = "Helvetica Neue"
-    static let monoFont = "Courier New"
-    let quoteFont = "Bodoni 72"
+    let textFont = ThemeData().textFont
+    let headingFont = ThemeData().headingFont
+    let linkFont = ThemeData().linkFont
+    static let monoFont = ThemeData().monoFont
+    let quoteFont = ThemeData().quoteFont
     let onClick: (URL) -> ()
     
     init(_ line: Line?, onClick: @escaping (URL) -> ()) {
