@@ -18,6 +18,12 @@ struct ThemeData {
     
     var backgroundColor: Color
     
+    var textFont: String
+    var headingFont: String
+    var linkFont: String
+    var monoFont: String
+    var quoteFont: String
+    
     init() {
        
         // classic theme
@@ -26,6 +32,12 @@ struct ThemeData {
             linkColor = .blue
             httpLinkColor = Color(red: 0, green: 0, blue: 1)
             backgroundColor = .black
+            
+            textFont = "Palatino"
+            headingFont = "Luminari"
+            linkFont = "Helvetica Neue"
+            monoFont = "Courier New"
+            quoteFont = "Bodoni 72"
         }
         
         // dark theme
@@ -34,6 +46,12 @@ struct ThemeData {
             linkColor = .blue
             httpLinkColor = Color(red: 0, green: 0, blue: 1)
             backgroundColor = .black
+            
+            textFont = "Palatino"
+            headingFont = "Luminari"
+            linkFont = "Helvetica Neue"
+            monoFont = "Courier New"
+            quoteFont = "Bodoni 72"
         }
         
         // light theme
@@ -42,6 +60,12 @@ struct ThemeData {
             linkColor = .blue
             httpLinkColor = Color(red: 0, green: 0, blue: 1)
             backgroundColor = .white
+            
+            textFont = "Palatino"
+            headingFont = "Luminari"
+            linkFont = "Helvetica Neue"
+            monoFont = "Courier New"
+            quoteFont = "Bodoni 72"
         }
         
         // satellite theme
@@ -50,6 +74,12 @@ struct ThemeData {
             linkColor = Color("star-yellow")
             httpLinkColor = Color("light-star-yellow")
             backgroundColor = Color("spaceblue")
+            
+            textFont = "Century Gothic"
+            headingFont = "Impact"
+            linkFont = "American Typewriter"
+            monoFont = "Noto Mono for Powerline"
+            quoteFont = "Bodoni 72"
         }
         
         // at fallback use classic theme
@@ -58,6 +88,12 @@ struct ThemeData {
             backgroundColor = .black
             linkColor = .blue
             httpLinkColor = Color(red: 0, green: 0, blue: 1)
+            
+            textFont = "Palatino"
+            headingFont = "Luminari"
+            linkFont = "Helvetica Neue"
+            monoFont = "Courier New"
+            quoteFont = "Bodoni 72"
         }
     }
 }
