@@ -21,6 +21,6 @@ struct SourceView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(8)
-        .background(Color.black)
+        .background(ThemeData().backgroundColor)
     }
 }

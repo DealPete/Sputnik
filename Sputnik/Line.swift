@@ -127,16 +127,16 @@ struct LineView: View {
         
         switch line.type {
         case .heading1:
-            view = AnyView(text.font(.custom(headingFont, size: 30)).foregroundColor(.white))
+            view = AnyView(text.font(.custom(headingFont, size: 30)).foregroundColor(textColor))
         case .heading2:
-            view = AnyView(text.font(.custom(headingFont, size: 25)).foregroundColor(.white))
+            view = AnyView(text.font(.custom(headingFont, size: 25)).foregroundColor(textColor))
         case .heading3:
-            view = AnyView(text.font(.custom(headingFont, size: 20)).foregroundColor(.white))
+            view = AnyView(text.font(.custom(headingFont, size: 20)).foregroundColor(textColor))
         
         case .quote:
             let endQuote = line.text.isEmpty ? "" : "”"
             let startQuote = line.text.isEmpty ? "" : "“"
-            view = AnyView(Text(startQuote + line.text + endQuote).font(.custom(quoteFont, size: 18)).foregroundColor(.green))
+            view = AnyView(Text(startQuote + line.text + endQuote).font(.custom(quoteFont, size: 18)).foregroundColor(textColor))
             
         case .list:
             view = AnyView(Text("• " + line.text).font(.custom(textFont, size: 16)).foregroundColor(textColor).lineSpacing(6))
@@ -159,7 +159,7 @@ struct LineView: View {
             padding = 0
         
         case .text:
-            view = AnyView(text.font(.custom(textFont, size: 16)).foregroundColor(textColor).lineSpacing(6))
+            view = AnyView(text.font(.custom(textFont, size: 16)).foregroundColor(ThemeData().textColor).lineSpacing(6))
         }
         
         return AnyView(view
