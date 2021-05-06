@@ -27,7 +27,7 @@ struct ThemeData {
     init() {
         switch (selectedThemeIndex)  {
             // classic theme
-        case 0:
+            case 0:
                 textColor = Color(red: 0.85, green: 0.85, blue: 0.85)
                 linkColor = .blue
                 httpLinkColor = Color(red: 0, green: 0, blue: 1)
@@ -41,35 +41,35 @@ struct ThemeData {
             
             
             // dark theme
-        case 1:
+            case 1:
                 textColor = .white
                 linkColor = .blue
                 httpLinkColor = Color(red: 0, green: 0, blue: 1)
-            backgroundColor = .black
+                backgroundColor = Color("dark-gray")
                 
-            textFont = "Arial"
-            headingFont = "Helvetica"
-            linkFont = "Helvetica Neue"
-            monoFont = "Courier New"
-            quoteFont = "Bodoni 72"
+                textFont = "Roboto"
+                headingFont = "Helvetica"
+                linkFont = "Roboto"
+                monoFont = "Courier New"
+                quoteFont = "Bodoni 72"
             
             
             // light theme
-        case 2:
+            case 2:
                 textColor = .black
-            linkColor = .blue
-            httpLinkColor = .blue
-            backgroundColor = .white
+                linkColor = .blue
+                httpLinkColor = .blue
+                backgroundColor = .white
                 
-                textFont = "Arial"
+                textFont = "Roboto"
                 headingFont = "Helvetica"
-                linkFont = "Helvetica Neue"
+                linkFont = "Roboto"
                 monoFont = "Courier New"
                 quoteFont = "Bodoni 72"
             
             
             // satellite theme
-        case 3:
+            case 3:
                 textColor = .white
                 linkColor = Color("star-yellow")
                 httpLinkColor = Color("light-star-yellow")
@@ -82,17 +82,17 @@ struct ThemeData {
                 quoteFont = "Bodoni 72"
             
             // classic theme for fallback
-        default:
-            textColor = Color(red: 0.85, green: 0.85, blue: 0.85)
-            linkColor = .blue
-            httpLinkColor = Color(red: 0, green: 0, blue: 1)
-            backgroundColor = .black
+            default:
+                textColor = Color(red: 0.85, green: 0.85, blue: 0.85)
+                linkColor = .blue
+                httpLinkColor = Color(red: 0, green: 0, blue: 1)
+                backgroundColor = .black
             
-            textFont = "Palatino"
-            headingFont = "Luminari"
-            linkFont = "Helvetica Neue"
-            monoFont = "Courier New"
-            quoteFont = "Bodoni 72"
+                textFont = "Palatino"
+                headingFont = "Luminari"
+                linkFont = "Helvetica Neue"
+                monoFont = "Courier New"
+                quoteFont = "Bodoni 72"
         }
     }
 }
