@@ -25,69 +25,68 @@ struct ThemeData {
     var quoteFont: String
     
     init() {
-       
-        // classic theme
-        if selectedThemeIndex == 0 {
+        switch (selectedThemeIndex)  {
+            // classic theme
+        case 0:
+                textColor = Color(red: 0.85, green: 0.85, blue: 0.85)
+                linkColor = .blue
+                httpLinkColor = Color(red: 0, green: 0, blue: 1)
+                backgroundColor = .black
+                
+                textFont = "Palatino"
+                headingFont = "Luminari"
+                linkFont = "Helvetica Neue"
+                monoFont = "Courier New"
+                quoteFont = "Bodoni 72"
+            
+            
+            // dark theme
+        case 1:
+                textColor = .white
+                linkColor = .blue
+                httpLinkColor = Color(red: 0, green: 0, blue: 1)
+            backgroundColor = .black
+                
+            textFont = "Arial"
+            headingFont = "Helvetica"
+            linkFont = "Helvetica Neue"
+            monoFont = "Courier New"
+            quoteFont = "Bodoni 72"
+            
+            
+            // light theme
+        case 2:
+                textColor = .black
+            linkColor = .blue
+            httpLinkColor = .blue
+            backgroundColor = .white
+                
+                textFont = "Arial"
+                headingFont = "Helvetica"
+                linkFont = "Helvetica Neue"
+                monoFont = "Courier New"
+                quoteFont = "Bodoni 72"
+            
+            
+            // satellite theme
+        case 3:
+                textColor = .white
+                linkColor = Color("star-yellow")
+                httpLinkColor = Color("light-star-yellow")
+                backgroundColor = Color("spaceblue")
+                
+                textFont = "Century Gothic"
+                headingFont = "Impact"
+                linkFont = "American Typewriter"
+                monoFont = "Noto Mono for Powerline"
+                quoteFont = "Bodoni 72"
+            
+            // classic theme for fallback
+        default:
             textColor = Color(red: 0.85, green: 0.85, blue: 0.85)
             linkColor = .blue
             httpLinkColor = Color(red: 0, green: 0, blue: 1)
             backgroundColor = .black
-            
-            textFont = "Palatino"
-            headingFont = "Luminari"
-            linkFont = "Helvetica Neue"
-            monoFont = "Courier New"
-            quoteFont = "Bodoni 72"
-        }
-        
-        // dark theme
-        if selectedThemeIndex == 1 {
-            textColor = .white
-            linkColor = .blue
-            httpLinkColor = Color(red: 0, green: 0, blue: 1)
-            backgroundColor = .black
-            
-            textFont = "Palatino"
-            headingFont = "Luminari"
-            linkFont = "Helvetica Neue"
-            monoFont = "Courier New"
-            quoteFont = "Bodoni 72"
-        }
-        
-        // light theme
-        if selectedThemeIndex == 2 {
-            textColor = .black
-            linkColor = .blue
-            httpLinkColor = Color(red: 0, green: 0, blue: 1)
-            backgroundColor = .white
-            
-            textFont = "Palatino"
-            headingFont = "Luminari"
-            linkFont = "Helvetica Neue"
-            monoFont = "Courier New"
-            quoteFont = "Bodoni 72"
-        }
-        
-        // satellite theme
-        if selectedThemeIndex == 3 {
-            textColor = .white
-            linkColor = Color("star-yellow")
-            httpLinkColor = Color("light-star-yellow")
-            backgroundColor = Color("spaceblue")
-            
-            textFont = "Century Gothic"
-            headingFont = "Impact"
-            linkFont = "American Typewriter"
-            monoFont = "Noto Mono for Powerline"
-            quoteFont = "Bodoni 72"
-        }
-        
-        // at fallback use classic theme
-        else {
-            textColor = .white
-            backgroundColor = .black
-            linkColor = .blue
-            httpLinkColor = Color(red: 0, green: 0, blue: 1)
             
             textFont = "Palatino"
             headingFont = "Luminari"
