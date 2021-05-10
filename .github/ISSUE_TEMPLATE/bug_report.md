@@ -23,8 +23,9 @@ A clear and concise description of what you expected to happen.
 
 **Environment**
 
-- OS: [e.g. OSX 10.13.4, Windows 10]
-- Sputnik version: [e.g. v1.1.0, main]
+- OS: [10.13.4]
+- Processor: [Silicon, x86]
+- Sputnik Branch: [eg. main]
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
