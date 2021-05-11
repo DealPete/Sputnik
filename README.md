@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/DealPete/Sputnik/master/.github/Apple-Macbook_dark.png" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/DealPete/Sputnik/master/.github/logo.svg" width="240" height="240" /></p>
 
 # 🚀 Sputnik Gemini Browser
 
