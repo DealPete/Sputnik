@@ -5,10 +5,14 @@ module.exports = {
     "./_posts/*.md",
     "./*.html",
   ],
-  darkMode: false,
+  darkMode: "media",
   theme: {
     extend: {},
   },
-  variants: {},
+  variants: {
+    extend: {
+      display: ["dark"],
+    },
+  },
   plugins: [require("@tailwindcss/typography")],
 };
