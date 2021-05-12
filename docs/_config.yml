@@ -22,8 +22,8 @@ title: Sputnik
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Sputnik is a browser for MacOS that uses the Gemini Protocol, a lightweight, low-energy protocol similar to HTTPS for reading gently marked up text documents. It uses SwiftUI, a new UI framework from Apple similar to Facebook's React Native. It's still a work in progress, but it's mature enough to experience most of the current Geminispace.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/Sputnik" # the subpath of your site, e.g. /blog
+url: "https://dealpete.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 plugins:
