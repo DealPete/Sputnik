@@ -556,6 +556,12 @@ video {
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
 @media (prefers-color-scheme: dark) {
   .dark\:bg-gray-900 {
     --tw-bg-opacity: 1;
@@ -563,12 +569,64 @@ video {
   }
 }
 
+.bg-gradient-to-tr {
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+
+.from-gray-700 {
+  --tw-gradient-from: #374151;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(55, 65, 81, 0));
+}
+
+.from-lightBlue-600 {
+  --tw-gradient-from: #0284c7;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(2, 132, 199, 0));
+}
+
+.to-gray-900 {
+  --tw-gradient-to: #111827;
+}
+
+.to-lightBlue-900 {
+  --tw-gradient-to: #0c4a6e;
+}
+
+.hover\:from-gray-900:hover {
+  --tw-gradient-from: #111827;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(17, 24, 39, 0));
+}
+
+.hover\:from-lightBlue-900:hover {
+  --tw-gradient-from: #0c4a6e;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(12, 74, 110, 0));
+}
+
+.hover\:to-gray-700:hover {
+  --tw-gradient-to: #374151;
+}
+
+.hover\:to-lightBlue-600:hover {
+  --tw-gradient-to: #0284c7;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .flex {
   display: flex;
 }
 
+.inline-flex {
+  display: inline-flex;
+}
+
 .table {
   display: table;
+}
+
+.grid {
+  display: grid;
 }
 
 .hidden {
@@ -631,6 +689,10 @@ video {
   margin-right: auto;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -645,6 +707,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .py-2 {
@@ -678,6 +744,11 @@ video {
   text-align: center;
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgba(31, 41, 55, var(--tw-text-opacity));
@@ -686,6 +757,16 @@ video {
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgba(17, 24, 39, var(--tw-text-opacity));
+}
+
+.text-yellow-200 {
+  --tw-text-opacity: 1;
+  color: rgba(253, 230, 138, var(--tw-text-opacity));
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgba(37, 99, 235, var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -704,6 +785,10 @@ video {
   text-decoration: underline;
 }
 
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -718,6 +803,34 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.transform {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
 }
 
 @-webkit-keyframes spin {
@@ -810,6 +923,10 @@ img#dark-mockup {
     line-height: 2rem;
   }
 
+  .md\:mt-6 {
+    margin-top: 1.5rem;
+  }
+
   .md\:p-5 {
     padding: 1.25rem;
   }
@@ -839,6 +956,10 @@ img#dark-mockup {
     margin-right: auto;
   }
 
+  .lg\:mt-20 {
+    margin-top: 5rem;
+  }
+
   .lg\:p-0 {
     padding: 0px;
   }
@@ -853,6 +974,10 @@ img#dark-mockup {
 
   .lg\:w-4\/5 {
     width: 80%;
+  }
+
+  .lg\:gap-3 {
+    gap: 0.75rem;
   }
 }
 
@@ -875,6 +1000,10 @@ img#dark-mockup {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }
+
+  .xl\:w-4\/6 {
+    width: 66.666667%;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -886,5 +1015,9 @@ img#dark-mockup {
   .\32xl\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
+  }
+
+  .\32xl\:gap-4 {
+    gap: 1rem;
   }
 }
