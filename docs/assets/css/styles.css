@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+img#dark-mockup {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  img#dark-mockup {
+    display: block;
+  }
+}

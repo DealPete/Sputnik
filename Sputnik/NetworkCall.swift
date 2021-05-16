@@ -42,7 +42,11 @@ class NetworkCall: ObservableObject {
     private func stateDidChange(to state: NWConnection.State) {
         switch state {
         case .ready:
-            let urlString = url.toString()
+            let urlStringRaw = url.toString()
+            // Fix for RFC-3896 section 5.2.4
+            let urlString = urlStringRaw.replacingOccurrences( of: #"\/\.\.\/(A-Z)\w+"#,
+                                                               with: "/",
+                                                               options: .regularExpression)
             let contentString = "\(urlString)\r\n"
             print("connecting to \(urlString) ...")
             connection.send(content: contentString.data(using: .utf8)!, completion: .contentProcessed( { error in
