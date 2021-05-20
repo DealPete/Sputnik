@@ -138,7 +138,7 @@ class GeminiDocument: ObservableObject {
             newUrl = GeminiURL(url: target)
         } else {
             let oldUrl = navStack[navIndex]
-            newUrl = oldUrl.combiningRelative(url: target)
+            newUrl = oldUrl.combiningRelative(url: target.standardized.absoluteURL)
         }
 
         self.connect(target: newUrl, lineId: lineId)
